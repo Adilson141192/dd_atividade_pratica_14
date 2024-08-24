@@ -4,44 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Você precisa obter os valores preenchidos em um formulário HTML, que possui campos para nome, idade, cargo, departamento e linguagem de programação.-->
-    <section>
+    <section class="formulario">
         <form method="get" action="">
             <fieldset>
-                <legend>Faça seu registro</legend>
-                <label for="">Nome</label><br>
-                <input type="text" name="nome"><br>
-                <label for="">Email</label><br>
-                <input type="email" name="email" required><br>
-            </fieldset>
-            <br>
-            <fieldset>
-                <legend for="">Serviços Desejados</legend>
-                <label for=""><input type="checkbox" name="passagens" value="passagens">Compra de Passagens</label>
-                <br><label for=""><input type="checkbox" name="hospedagem" value="hospedagem">Reserva de Hospedagem</label>
-                <br><label for=""><input type="checkbox" name="veiculo" value="veiculo">Aluguel de Veículos</label>
-            </fieldset>
-            <br>
-            <fieldset>
-                <legend>Forma de Pagamento</legend>
-                <label for=""><input type="radio" name="formaPagamento" value="Cartão de Crédito"> Cartão de Crédito</label>
-                <label for=""><br><input type="radio" name="formaPagamento" value="Boleto"> Boleto</label>
-                <label for=""><br><input type="radio" name="formaPagamento" value="Pix"> PIX</label>
-            </fieldset>
-            <br>
-            <fieldset>
-                <legend>Prazo de Pagamento</legend>
-                <select name="prazoPagamento" id="">
-                    <option value="aVista">À vista</option>
-                    <option value="5x">Cinco Vezes Sem Juros</option>
-                    <option value="10x" selected>Dez Vezes Com Juros</option>
+                <legend>Preencha seus dados para registro</legend>
+                <h2>Selecione seu nome</h2>
+                <select name="nome" id="nome">
+                    <option value="vegetti" selected>Vegetti Silva</option>
+                    <option value="payet">Payet Silva</option>
+                    <option value="coutinho">Coutinho Silva</option>
                 </select>
+
+                <h2>Selecione sua idade</h2>
+                    <select name="idade" id="idade">
+                        <option value="menos18">Menos de 18</option>
+                        <option value="18" selected>18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="mais40">Mais de 40</option>
+                    </select>
+
+                <h2>Selecione seu cargo</h2>
+                <select name="cargo" id="cargo">
+                    <option value="funcionario" selected>Funcionário</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="programador">Programador</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="entregador">Entregador</option>
+                </select>
+
+                <h2>Selecione seu departamento</h2>
+                <select name="departamento" id="departamento">
+                    <option value="vendas" selected>Vendas</option>
+                    <option value="producao">Produção</option>
+                    <option value="programacao">Programação</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="logistica">Logística</option>
+                </select>
+                
+                <h2>Selecione sua linguagem de programação</h2>
+                <select name="linguagem" id="linguagem">
+                    <option value="nao">Não se aplica</option>
+                    <option value="js" selected>JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="php">PHP</option>
+                </select>
+
+                <br><br><input type="submit" value="Registrar" class="registrar">
             </fieldset>
-            <br>
-            <input type="submit" value="Enviar">
         </form>
     </section>
+    <script src="atividade.js"></script>
+    <script src="exercicio.js"></script>
 </body>
 </html>
