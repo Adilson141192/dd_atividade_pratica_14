@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Você precisa obter os valores preenchidos em um formulário HTML, que possui campos para nome, idade, cargo, departamento e linguagem de programação.-->
+    <section>
+        <form method="get" action="">
+            <fieldset>
+                <legend>Faça seu registro</legend>
+                <label for="">Nome</label><br>
+                <input type="text" name="nome"><br>
+                <label for="">Email</label><br>
+                <input type="email" name="email" required><br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend for="">Serviços Desejados</legend>
+                <label for=""><input type="checkbox" name="passagens" value="passagens">Compra de Passagens</label>
+                <br><label for=""><input type="checkbox" name="hospedagem" value="hospedagem">Reserva de Hospedagem</label>
+                <br><label for=""><input type="checkbox" name="veiculo" value="veiculo">Aluguel de Veículos</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Forma de Pagamento</legend>
+                <label for=""><input type="radio" name="formaPagamento" value="Cartão de Crédito"> Cartão de Crédito</label>
+                <label for=""><br><input type="radio" name="formaPagamento" value="Boleto"> Boleto</label>
+                <label for=""><br><input type="radio" name="formaPagamento" value="Pix"> PIX</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Prazo de Pagamento</legend>
+                <select name="prazoPagamento" id="">
+                    <option value="aVista">À vista</option>
+                    <option value="5x">Cinco Vezes Sem Juros</option>
+                    <option value="10x" selected>Dez Vezes Com Juros</option>
+                </select>
+            </fieldset>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+</html>
