@@ -64,7 +64,23 @@ programdor1.programar();
 
 //Lembre-se de testar o código, preencher todos os campos corretamente e também de testar situações em que os campos não estejam preenchidos ou contenham valores inválidos.
 
-document.querySelector("form").onsubmit = function(registro){
-    registro.preventDefault();
-    console.log("Formulário ok!");
- }
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const listaRespostas = {
+        "nome": e.target.elements["nome"].value,
+        "idade": e.target.elements["idade"].value,
+        "cargo": e.target.elements["cargo"].value,
+        "departamento": e.target.elements["departamento"].value,
+        "linguagem": e.target.elements["linguagem"].value,
+    }
+
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    window.location.href = "index.html";
+})
+
+camposDoFormulario.forEach((campo) => {
+    campo.addEventListener("blur", () => verificaCampo(campo));
+    campo.addEventListener("invalid", evento => evento.preventDefault())
+})
