@@ -26,3 +26,11 @@
     border-radius: 5px;
     margin: 0 auto;
 }
+
+.mensagem-erro {
+    color: red;
+}
+
+.campo__escrita--erro {
+    border: 2px solid red;
+}

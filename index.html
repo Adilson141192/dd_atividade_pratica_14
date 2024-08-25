@@ -13,16 +13,24 @@
             <fieldset>
                 <legend>Preencha seus dados para registro</legend>
                 <h2>Seu nome:</h2>
-                <input type="text" name="nome" id="nome" placeholder="Nome completo">
+                <input type="text" name="nome" id="nome" placeholder="Nome completo" minlength="5" required>
+                <span class="mensagem-erro"></span>
 
                 <h2>Sua idade:</h2>
-                <input type="text" name="idade" id="idade" placeholder="Sua idade">
+                <input type="text" name="idade" id="idade" placeholder="Idade" minlength="2" required>
+                <span class="mensagem-erro"></span>
 
                 <h2>Seu cargo:</h2>
-                <input type="text" name="cargo" id="cargo" placeholder="Seu cargo">
+                <input type="text" name="cargo" id="cargo" placeholder="Cargo" minlength="5" required>
+                <span class="mensagem-erro"></span>
 
                 <h2>Seu departamento:</h2>
-                <input type="text" name="departamento" id="departamento" placeholder="Seu departamento">
+                <input type="text" name="departamento" id="departamento" placeholder="Departamento" minlength="5" required>
+                <span class="mensagem-erro"></span>
+
+                <h2>Sua linguagem de programação:</h2>
+                <input type="text" name="linguagem" id="linguagem" placeholder="Linguagem de programação" minlength="3" required>
+                <span class="mensagem-erro"></span>
 
                 <br><br><input type="submit" value="Registrar" class="registrar">
             </fieldset>
