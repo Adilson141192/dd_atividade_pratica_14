@@ -1,4 +1,4 @@
-class Funcionario {
+/*class Funcionario {
     nome;
     idade;
     cargo;
@@ -54,7 +54,7 @@ gerente1.gerenciar();
 programdor1.seApresentar();
 programdor1.trabalhar();
 programdor1.programar();
-
+*/
 
 //Agora, seu objetivo é aprimorar o código, adicionando tratamento de exceções (usando try-catch) e interação com elementos do DOM. Você precisa obter os valores preenchidos em um formulário HTML, que possui campos para nome, idade, cargo, departamento e linguagem de programação. Certifique-se de que todos os campos estão preenchidos corretamente antes de criar as instâncias das classes.
 
@@ -64,7 +64,7 @@ programdor1.programar();
 
 //Lembre-se de testar o código, preencher todos os campos corretamente e também de testar situações em que os campos não estejam preenchidos ou contenham valores inválidos.
 
-formulario.addEventListener("submit", (e) => {
+/*formulario.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const listaRespostas = {
@@ -83,4 +83,52 @@ formulario.addEventListener("submit", (e) => {
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo));
     campo.addEventListener("invalid", evento => evento.preventDefault())
+})*/
+
+/*
+const listaRespostas = {
+        "nome": event.target.elements["nome"].value,
+        "idade": event.target.elements["idade"].value,
+        "cargo": event.target.elements["cargo"].value,
+        "departamento": event.target.elements["departamento"].value,
+        "linguagem": event.target.elements["linguagem"].value,
+    }
+*/
+
+const form = document.querySelector("#form")
+const nomeInput = document.querySelector("#nome")
+const idadeInput = document.querySelector("#idade")
+const cargoInput = document.querySelector("#cargo")
+const departamentoInput = document.querySelector("#departamento")
+const linguagemInput = document.querySelector("#linguagem")
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if(nomeInput.value !== Vegetti || Payet) {
+        alert("Por favor, preencha com um nome válido");
+        return;
+    }
+
+    if(idadeInputInput.value !== 35 || 37) {
+        alert("Por favor, preencha com uma idade válida");
+        return;
+    }
+
+    if(cargoInput.value !== gerente || programador) {
+        alert("Por favor, preencha com um cargo válido");
+        return;
+    }
+
+    if(departamentoInput.value !== vendas || nenhum) {
+        alert("Por favor, preencha com um cargo válido");
+        return;
+    }
+
+    if(linguagemInput.value !== javascript || nenhum) {
+        alert("Por favor, preencha com uma linguagem válida");
+        return;
+    }
+
+    form.submit();
 })
