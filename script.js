@@ -1,4 +1,4 @@
-/*class Funcionario {
+class Funcionario {
     nome;
     idade;
     cargo;
@@ -54,81 +54,58 @@ gerente1.gerenciar();
 programdor1.seApresentar();
 programdor1.trabalhar();
 programdor1.programar();
-*/
 
-//Agora, seu objetivo é aprimorar o código, adicionando tratamento de exceções (usando try-catch) e interação com elementos do DOM. Você precisa obter os valores preenchidos em um formulário HTML, que possui campos para nome, idade, cargo, departamento e linguagem de programação. Certifique-se de que todos os campos estão preenchidos corretamente antes de criar as instâncias das classes.
+function exibirErro(mensagem) {
+    const erroDiv = document.getElementById("erro");
+    erroDiv.textContent = mensagem;
+    erroDiv.style.color = "red";
+}
 
-//Após obter os valores dos campos do formulário, crie instâncias de um gerente e de um desenvolvedor, utilizando os valores preenchidos. Em seguida, chame os métodos apropriados para cada um dos funcionários e exiba as informações relevantes na página, como a apresentação do funcionário e as tarefas que ele realiza.
+function limparErro() {
+    const erroDiv = document.getElementById("erro");
+    erroDiv.textContent = "";
+}
 
-//Caso ocorra algum erro durante a execução do código, trate as exceções usando a função exibirErro(), que exibirá uma mensagem de erro na página.
+function criarFuncionario() {
+    try {
+        limparErro();
+        const nome = document.getElementById("nome").value;
+        const idade = document.getElementById("idade").value;
+        const cargo = document.getElementById("cargo").value;
+        const departamento = document.getElementById("departamento").value;
+        const linguagem = document.getElementById("linguagem").value;
 
-//Lembre-se de testar o código, preencher todos os campos corretamente e também de testar situações em que os campos não estejam preenchidos ou contenham valores inválidos.
+        if (!nome || !idade || !cargo) {
+            throw new Error("Por favor, preencha todos os campos obrigatórios.");
+        }
 
-/*formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
+        let funcionario;
+        if (cargo === "Gerente") {
+            if (!departamento) throw new Error("Por favor, preencha o campo de departamento.");
+            funcionario = new Gerente(nome, idade, cargo, departamento);
+        } else if (cargo === "Desenvolvedor") {
+            if (!linguagem) throw new Error("Por favor, preencha o campo de linguagem.");
+            funcionario = new Desenvolvedor(nome, idade, cargo, linguagem);
+        } else {
+            funcionario = new Funcionario(nome, idade, cargo);
+        }
 
-    const listaRespostas = {
-        "nome": e.target.elements["nome"].value,
-        "idade": e.target.elements["idade"].value,
-        "cargo": e.target.elements["cargo"].value,
-        "departamento": e.target.elements["departamento"].value,
-        "linguagem": e.target.elements["linguagem"].value,
+        exibirInformacoes(funcionario);
+    } catch (erro) {
+        exibirErro(erro.message);
+    }
+}
+
+function exibirInformacoes(funcionario) {
+    const resultadoDiv = document.getElementById("resultado");
+    let informacoes = funcionario.seApresentar();
+    informacoes += "<br>" + funcionario.trabalhar();
+
+    if (funcionario instanceof Gerente) {
+        informacoes += "<br>" + funcionario.gerenciar();
+    } else if (funcionario instanceof Desenvolvedor) {
+        informacoes += "<br>" + funcionario.programar();
     }
 
-    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
-
-    window.location.href = "index.html";
-})
-
-camposDoFormulario.forEach((campo) => {
-    campo.addEventListener("blur", () => verificaCampo(campo));
-    campo.addEventListener("invalid", evento => evento.preventDefault())
-})*/
-
-/*
-const listaRespostas = {
-        "nome": event.target.elements["nome"].value,
-        "idade": event.target.elements["idade"].value,
-        "cargo": event.target.elements["cargo"].value,
-        "departamento": event.target.elements["departamento"].value,
-        "linguagem": event.target.elements["linguagem"].value,
-    }
-*/
-
-const form = document.querySelector("#form")
-const nomeInput = document.querySelector("#nome")
-const idadeInput = document.querySelector("#idade")
-const cargoInput = document.querySelector("#cargo")
-const departamentoInput = document.querySelector("#departamento")
-const linguagemInput = document.querySelector("#linguagem")
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if(nomeInput.value !== Vegetti || Payet) {
-        alert("Por favor, preencha com um nome válido");
-        return;
-    }
-
-    if(idadeInputInput.value !== 35 || 37) {
-        alert("Por favor, preencha com uma idade válida");
-        return;
-    }
-
-    if(cargoInput.value !== gerente || programador) {
-        alert("Por favor, preencha com um cargo válido");
-        return;
-    }
-
-    if(departamentoInput.value !== vendas || nenhum) {
-        alert("Por favor, preencha com um cargo válido");
-        return;
-    }
-
-    if(linguagemInput.value !== javascript || nenhum) {
-        alert("Por favor, preencha com uma linguagem válida");
-        return;
-    }
-
-    form.submit();
-})
+    resultadoDiv.innerHTML = informacoes;
+}
