@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Cadastro de Funcionário</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Cadastro</title>
 </head>
 <body>
-    <section class="formulario">
-        <form id="form">
-            <fieldset>
-                <legend>Preencha seus dados para registro</legend>
-                <h2>Seu nome:</h2>
-                <input type="text" name="nome" id="nome" placeholder="Nome completo" minlength="5">
-                <span class="mensagem-erro"></span>
+    <h1>Formulário de Cadastro</h1>
 
-                <h2>Sua idade:</h2>
-                <input type="text" name="idade" id="idade" placeholder="Idade" minlength="2">
-                <span class="mensagem-erro"></span>
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome"><br><br>
 
-                <h2>Seu cargo:</h2>
-                <input type="text" name="cargo" id="cargo" placeholder="Cargo" minlength="5">
-                <span class="mensagem-erro"></span>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade"><br><br>
 
-                <h2>Seu departamento:</h2>
-                <input type="text" name="departamento" id="departamento" placeholder="Departamento" minlength="5">
-                <span class="mensagem-erro"></span>
+        <label for="cargo">Cargo:</label>
+        <select id="cargo">
+            <option value="Funcionario">Funcionário</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Desenvolvedor">Desenvolvedor</option>
+        </select><br><br>
 
-                <h2>Sua linguagem de programação:</h2>
-                <input type="text" name="linguagem" id="linguagem" placeholder="Linguagem de programação" minlength="3">
-                <span class="mensagem-erro"></span>
+        <label for="departamento">Departamento (Gerentes):</label>
+        <input type="text" id="departamento"><br><br>
 
-                <br><br><button type="button" onclick="criarFuncionario()">Cadastrar funcionário</button>
-            </fieldset>
-        </form>
-    </section>
+        <label for="linguagem">Linguagem de Programação (Desenvolvedores):</label>
+        <input type="text" id="linguagem"><br><br>
+
+        <button type="button" onclick="criarFuncionario()">Cadastrar</button>
+    </form>
+
+    <div id="erro"></div>
+    <div id="resultado"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
