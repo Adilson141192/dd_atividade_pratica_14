@@ -14,23 +14,3 @@
     font-size: 20px;
     border: 2px solid black;
 }
-
-.registrar {
-    width:20%;
-    padding: 15px 0;
-    background: red;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-
-.mensagem-erro {
-    color: red;
-}
-
-.campo__escrita--erro {
-    border: 2px solid red;
-}
